@@ -8,8 +8,11 @@ import pandas as pd
 
 # Import the model
 
-pipe = pickle.load(open('pipe.pkl','rb'))
-df = pickle.load(open('df.pkl','rb'))
+from pathlib import Path
+
+MODELS_DIR = Path(__file__).parent / 'models'
+pipe = pickle.load(open(MODELS_DIR / 'pipe.pkl','rb'))
+df = pickle.load(open(MODELS_DIR / 'df.pkl','rb'))
 
 st.title("Laptop Price Predictor")
 
